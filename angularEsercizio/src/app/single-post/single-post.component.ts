@@ -1,12 +1,16 @@
 import { Component, Input } from '@angular/core';
-import { iPost } from '../models/posts';
+import { PostInterface } from '../../interfaces/post.interface';
+
 
 @Component({
   selector: 'app-single-post',
   templateUrl: './single-post.component.html',
-  styleUrl: './single-post.component.scss'
+  styleUrls: ['./single-post.component.scss']
 })
 export class SinglePostComponent {
-  @Input() post!:iPost
-
+  @Input() post!: PostInterface
+  edit: Boolean = false
+  toggleEdit() {
+    this.edit = !this.edit
+  }
 }
